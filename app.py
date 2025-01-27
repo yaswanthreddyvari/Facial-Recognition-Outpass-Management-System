@@ -9,7 +9,7 @@ import time
 
 app = Flask(__name__)
 
-path = 'images'
+path = 'facial-recognition-outpass-management-system-main/images'
 
 images = []
 classNames = []
@@ -89,7 +89,7 @@ def upload():
         _, img = cap.read()
         recognized_faces = recognize_face(img) 
         print(recognized_faces)   
-        students_path='static/student_details.csv'
+        students_path='facial-recognition-outpass-management-system-main/facial-recognition-outpass-management-system-main/static/student_details.csv'
         details=None
         for i,j in recognized_faces:
             idx=i
@@ -145,7 +145,7 @@ def fetch():
     return render_template('inandout.html', details=det,out=out,in_time=in_time)
 def generate_unique_id(student_id):
     timestamp = int(time.time())
-    unique_id = f"RKVOP{timestamp}"
+    unique_id = f"NUZOP{timestamp}"
     return unique_id
 outpass_path='static/outpass.csv'
 @app.route('/detail', methods=['POST'])
